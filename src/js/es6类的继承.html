@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button type="button" class="btn btn-large btn-block btn-default">点击</button>
+    
+    <script>
+    // 1.创建父类
+    var that;
+    class Father{
+        constructor(x,y){
+            this.x=x;
+            this.y=y;
+        }
+
+        sum(){
+            console.log(this.x+this.y)
+        }
+    }
+    // 2.定义子类继承父类的方法
+    // 3.子类可以继承父亲的方法
+    // 也可以拓展新的方法
+    class Son extends Father{
+        constructor(x,y){
+            
+            // 调用父类的构造函数，并且给父类赋值
+            // super在子类中使用的时候，必须放在this调用之前
+            super(x,y)
+            that=this;
+            this.x=x;
+            this.y=y;
+            this.btn=document.querySelector('button');
+            this.btn.onclick=this.subcat;//返回NAN
+        }
+        // 子类扩展出来的方法
+        subcat(){
+            console.log(that.x-that.y)
+        }
+    }
+     let son=new Son(3,1);
+     son.sum();
+     son.subcat();
+    </script>
+</body>
+</html>

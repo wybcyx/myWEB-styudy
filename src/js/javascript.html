@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 创建一个类
+
+    class star{
+        constructor(uname){
+            this.uname=uname;
+        }
+        //在class中方法之间不需要，分割
+        sign(){
+            console.log("火红的萨日朗。。。。")
+        }
+
+    }
+    let star1=new star("刘德华");
+    console.log(star1.uname) 
+    // 1.通过class关键字创建类，类名的首字母大写
+    // 2.类里面的constructor是构造函数，可以接受参数，返回类的实例对象
+    // 3.使用new生成实例时就会调用类的构造函数，返回对象实例
+    // 4.生成实例时new不能省略
+    // 5.注意语法，创建class时类名后边没有（），使用new生成实例的时候，类名后边带（）
+    // 构造函数不需要function关键字
+
+    // 6.我们类里面所有的方法函数都不需要加function，函数中间不用加函数分割
+    </script>
+</body>
+</html>
