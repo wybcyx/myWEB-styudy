@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数和原型</title>
+</head>
+<body>
+    <script>
+    // 字面值生成对象
+    var myobj={};
+    // 通过new Object
+    var myobj2=new Object();
+        // 自定义构造函数
+        function MyOb(name,age){
+            // 对象中的参数分为两类：静态成员和实例成员
+            // 1、实例成员：对象中通过this添加的属性和方法，实力成员只能通过实例化的对象访问；
+            // 2、静态成员：在构造函数本身上添加的属性和方法， 只能通过构造函数访问
+            this.name=name;
+            this.age=age;
+            this.sign=function(){
+                console.log("我会唱歌。。。")
+            }
+        }
+        MyOb.sex="男";
+        var ldh=new MyOb("刘德华",18)
+        console.log(ldh)
+        console.log(MyOb.sex)
+    </script>
+   
+</body>
+</html>

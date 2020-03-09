@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES5新增的方法</title>
+</head>
+<body>
+    <script>
+        // 1、forEach的用法
+        let arr=[1,2,3,4,5];
+        // 遍历数组每个元素
+        // arr.forEach(function (values,index,arr) {
+        //     console.log("数据元素"+values);
+        //     console.log("数据元素索引"+index);
+        //     console.log("数据本身"+arr);
+        // })
+        // 2、filter过滤器，满足过滤器条件的才显示
+        let newArr=arr.filter((value,index,arr)=>{
+            return value>2;
+        })
+        // console.log(newArr);
+        // 3、some（）方法是监测数组中元素值是否满足条件，返回值为boolean
+        // 如果找到一个，就停止循环
+        let flag=arr.some((value,index,arr)=>{
+            return value===2;
+        })
+        // console.log(flag);
+        // 对象的方法测试
+        // keys（）
+        let obj={
+            name:"wangyongbo",
+            age:18,
+            priove:"shangdong"
+        }
+        let arr1=Object.keys(obj)
+        console.log(arr1);
+        
+    </script>
+    
+</body>
+</html>

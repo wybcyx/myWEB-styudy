@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合继承的-call</title>
+</head>
+<body>
+    <script>
+        // 首先定义两个构造函数，父和子
+        function Father(name,age) {
+            this.name=name;
+            this.age=age;
+        }
+        function Son(name,age,like) {
+            // 通过call（）函数调用父构造函数，并改变父构造函数的this为子构造函数的this
+            Father.call(this,name,age);
+            this.like=like;
+        }
+        let son=new Son("王永波",18,"篮球")
+        console.log(son);
+        
+    </script>
+</body>
+</html>

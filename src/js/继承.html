@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合继承的-call</title>
+</head>
+<body>
+    <script>
+    // call方法的演示
+    function Myfun(params) {
+        console.log(this);
+        console.log(params);
+    }
+    let obj={
+        name:"wyb",
+        age:18
+    }
+    // 普通调用方法
+    Myfun("你好，我是参数params");
+    //this=>window
+    //params=>
+    //call()调用函数
+    Myfun.call(obj,"你好，我是参数params")
+    // 作用1：调用Myfun函数
+    // 作用2：函数的this指向对象obj
+    //this=>obj对象
+    </script>
+</body>
+</html>
