@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包函数</title>
+</head>
+<body>
+    <button>点击计数</button>
+    <ul id="nav">
+        <li>宝马</li>
+        <li>奔驰</li>
+        <li>别克</li>
+        <li>法拉利</li>
+        <li>迈巴赫</li>
+    </ul>
+    <p id="count"></p>
+    <script>
+        // function fn(){
+        //     var num=0;
+        //     function innerFn(){
+        //         num+=1;
+        //         // return num;
+        //         console.log(num)
+        //     }
+        //     return ;
+        // }
+        //另一种写法
+        function fn(){
+            var num=0;
+            return function(){
+                num+=1;
+                // return num;
+                console.log(num)
+            };
+        }
+        var f=fn()
+        var btn=document.querySelector('button')
+        btn.onclick=f;
+
+        // 循环点击事件，点击<li>时显示这个li的index
+        // 1、传统方法
+        var lis=document.querySelector('#nav').querySelectorAll('li');
+        // for (let index = 0; index < lis.length; index++) {
+        //     lis[index].index=index;
+        //     lis[index].onclick=function(){
+        //         console.log(this.index)
+        //     }
+        // }
+        // 2、使用闭包的方式,借用立即执行函数
+            //  for (let i = 0; i < lis.length; i++) {
+            //     //  使用理解执行函数将i这个数据放大作用域
+            //     (function(i){
+            //         //这里的i是立即执行函数的参数传过来的
+            //         lis[i].onclick=function(){
+            //             console.log(i);
+            //         }
+            //     })(i)
+            //  }
+            //  使用闭包函数实现顺序输出<li>的内容
+            for (let i = 0; i < lis.length; i++) {
+                (function(i){
+                    setTimeout(() => {
+                       console.log(lis[i].innerHTML);
+                    }, i*1000);
+                })(i)
+                
+            }
+    </script>
+</body>
+</html>

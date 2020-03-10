@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a=[1,2,3]
+        // var [...b]=a;
+        // a[0]=4;
+        // console.log(a);
+        // console.log(b);
+        const target = { a: 1, b: 2 };
+        const source = { b: 4, c: 5 };
+
+        const returnedTarget = Object.assign(source,target);
+        // 用前者对象属性为基础，如果后边的对象有相同的属性，就覆盖这个属性，
+        // 操作后的结果是这两个对象属性也发生了变化
+        // const returnedTarget = Object.assign(target);
+
+        console.log(source);
+        // expected output: Object { a: 1, b: 4, c: 5 }
+        console.log(returnedTarget);
+        // expected output: Object { a: 1, b: 4, c: 5 }
+    </script>
+</body>
+</html>

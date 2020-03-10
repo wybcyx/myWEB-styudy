@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <!-- 演示gaibianthis指向的方法：call（）、apply（）、bind（）     -->
+    <script>
+    // let obj={
+    //     name:"wangyongbo "
+    // }
+    // function show(params) {
+    //     console.log(this);
+    //     console.log(params);
+        
+    // }
+    // show.call(obj,"wany")
+
+    // let arr=[22,334,33,2,1]
+    // let max=Math.max.apply(null,arr);
+    // console.log(max);
+    var btn=document.querySelector('button');
+    btn.onclick=function(){
+        this.disabled=true;
+        setTimeout(function(){
+            this.disabled=false;//这是错误的，因为这里的this并不是指向btn，而是window，如果想改变this指向，使用call（）、apply（）、bind（）
+            // 分析一下就知道，bind可以不用立即之星
+        }.bind(this),3000)//注意这一行的bind中的this指向的是btn
+    }
+    
+    </script>
+</body>
+</html>
