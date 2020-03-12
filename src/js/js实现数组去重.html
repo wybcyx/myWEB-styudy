@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去重</title>
+</head>
+<body>
+    <!-- 数组去重的方法 -->
+    <script>
+        var arr=[1,1,1,2,2,3,3,4,4,5,5];
+        // 方法1、利用set数据结构去重,es6的新特性
+        // console.log("利用set数据结构去重:",[...new Set(arr)])
+        // console.log("利用set数据结构去重:",arr)
+        // 方法2、利用for嵌套for，然后splice去重
+        // function unique2(arr){            
+        //     for(var i=0; i<arr.length; i++){
+        //         for(var j=i+1; j<arr.length; j++){
+        //             if(arr[i]==arr[j]){         //第一个等同于第二个，splice方法删除第二个
+        //                 arr.splice(j,1);
+        //                 j--;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        //     }
+        //     var copy_arr=[...arr]
+        // console.log("方法2利用for循环嵌套和数组的方法splice",unique2(copy_arr));
+        // console.log("方法2利用for循环嵌套和数组的方法splice",arr);
+        // end
+
+        // 方法3、利用数组中的indexOf（）方法
+        // 新建一个空的结果数组，用来保存结果。
+        // 遍历数组中的元素，如果这个元素在新数组中存在就跳过，不存在就push进新数组
+            // function unique3(arrParams) {
+            //     if(!Array.isArray(arrParams)){
+            //         console.log("error arr");
+            //         return
+            //     }
+            //     var resultArr=[];
+            //     for (let index = 0; index < arrParams.length; index++) {
+            //         if(resultArr.indexOf(arrParams[index])=== -1){
+            //             resultArr.push(arrParams[index]);
+            //         } 
+            //     }
+            //     return resultArr;
+            // }
+            // console.log("方法3利用数组中的indexOf（）方法",unique3(arr));
+            // console.log("方法3利用数组中的indexOf（）方法",arr);
+            // 方法4：利用数组的sort方法进行排序，循环判断相邻元素
+            // function unique4(arrParams) {
+            //     if(!Array.isArray(arrParams)){
+            //         console.log("error arr");
+            //         return "";
+            //     }
+            //     arrParams=arrParams.sort();
+            //     var resultArr=[arrParams[0]];
+            //     for (let index = 1; index < arrParams.length; index++) {
+            //         if (arrParams[index-1]!=arrParams[index]) {
+            //             resultArr.push(arrParams[index])
+            //         }
+            //     }
+            //     return resultArr;
+            // }
+            // console.log("方法4:利用数组中的sort（）方法",unique4(arr));
+            // console.log("方法4:利用数组中的sort（）方法",arr);
+            // 方法5、利用数组的include方法和indexof类似
+            // 方法6、利用Map数据结构去重
+            console.log(NaN===NaN)
+    </script>
+</body>
+</html>

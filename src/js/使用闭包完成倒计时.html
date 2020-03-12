@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js完成倒计时</title>
+</head>
+<body>
+    <button id="countDown">发送验证码</button>
+    <script>
+        function getCode(waitTime) {
+            var _wait=waitTime;
+            for (let i = _wait; i >=0; i--) {
+                (function (i) {
+                        setTimeout(() => {
+                            console.log(btn)
+                            btn.innerHTML=i+"s后重新发送"
+                            if(i===0){
+                                btn.disabled=false;
+                                btn.innerHTML="发送验证码"
+                            }
+                        }, (_wait-i)*1000);
+                })(i)
+            }
+
+        } 
+        var btn=document.querySelector("#countDown")
+        btn.addEventListener("click",function () {
+            btn.disabled=true;
+            // btn.innerHTML="60s后重新发送"
+            getCode(5);
+        })
+    </script>
+</body>
+</html>
