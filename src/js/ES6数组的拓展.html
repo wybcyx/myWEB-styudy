@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1、拓展运算符(...)
+    数组的拓展运算符可以用于函数的传参，将数组的元素作为参数展开 -->
+        <script>
+        function push1(arr,...item) {
+            arr.push(...item)
+            return arr;
+        }
+        let Arr=[1,2,3]
+        let k=[2,3,3];
+        console.log(push1(k,...Arr));
+        
+        </script>
+</body>
+</html>

@@ -49,3 +49,49 @@ set.keys()//返回键
 set.values()//返回值
 set.entries()//返回键值对，set的键和值是一样的。
 set.forEach((value,key)=>{},this)//forEach其实还有第二个参数，表示绑定处理函数内部的this对象。
+
+2.WeakSet 
+weakSet和Set的作用是类似的，但是WeakSet的元素必须是对象，如果插入值类型的会报错。
+
+3.Map
+JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+
+Map类似于javascript中的Objection，但是“键”的范围不在仅仅限于字符串。Map的键可以使任何类型的值；
+
+      var arr=[["name","wangyongbo"],["age","23"]]
+        var map=new Map(arr);
+        console.log(map);
+        console.log(map.get("name"));
+        map.set(123,"wywww")
+        console.log(map);
+
+如果对同一个键多次赋值，后面的值将覆盖前面的值。
+
+注意，只有对同一个对象的引用，Map 结构才将其视为同一个键。这一点要非常小心。
+const map = new Map();
+
+map.set(['a'], 555);
+map.get(['a']) // undefined
+
+上面代码的set和get方法，表面是针对同一个键，但实际上这是两个不同的数组实例，内存地址是不一样的，因此get方法无法读取该键，返回undefined。
+
+
+Map 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键。这就解决了同名属性碰撞（clash）的问题，我们扩展别人的库的时候，如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。
+
+map实例的属性和方法
+size=>map实例的长度，相等于length
+set（key，value）=》向map中添加元素，该方法返回的是map实例，因此可以使用链式操作
+has（key）//返回布尔，表示某个键是map实例中是否存在
+delete（key） ====删除map中的某个键
+clear（） ====清空map实例
+
+
+遍历方法（map的遍历顺序就是元素的插入顺序   ）
+Map.prototype.keys()：返回键名的遍历器。
+Map.prototype.values()：返回键值的遍历器。
+Map.prototype.entries()：返回所有成员的遍历器。
+Map.prototype.forEach()：遍历 Map 的所有成员。
+
+map转数组的方法====》运算扩展符（...）
+
+

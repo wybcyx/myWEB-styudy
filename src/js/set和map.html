@@ -10,7 +10,46 @@
     <script>
         var mySet=new Set([1,2,2,3,4,5,5])
         console.log([...mySet]);
+
+        //map的基本原则还是键值对的方式，但是map的键范围比较广；
+
+        var arr=[["name","wangyongbo"],["age","23"]]
+        // var map=new Map(arr);
+        // console.log(map);
+        // console.log(map.get("name"));
+        // map.set(123,"wywww")
+        // console.log(map);
+        // console.log("map 测试.......................................");
+        // // 下面的键是不一样的['5']的内存地址不一样呀
+        // map.set(['5'],10000);
+        // console.log(map.get(['5']));
+        console.log("***************************分割线*****************************");
+        const map = new Map([
+                    [1, 'one'],
+                    [2, 'two'],
+                    [3, 'three'],
+                    ]);
+
+        console.log([...map.keys()]);
+         
+                    // [1, 2, 3]
+        console.log([...map.values()]);
         
+                    
+                    // ['one', 'two', 'three']
+        console.log([...map.entries()]);
+        
+                    
+                    // [[1,'one'], [2, 'two'], [3, 'three']]
+
+        console.log([...map]);
+                    
+                    // [[1,'one'], [2, 'two'], [3, 'three']]
+        
+         
+        
+        
+
     </script>
 </body>
 </html>

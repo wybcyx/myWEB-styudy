@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1、创建promise对象
+    const pro=new Promise((resolve,reject)=>{
+        //异步操作执行器
+        setTimeout(() => {
+            const time=Date.now();
+            if(time%2===0){
+                resolve("成功是调用resolve函数，time="+time)
+            }else{
+                resolve("失败是调用reject函数，time="+time)
+
+            }
+        }, 1000);
+
+        // 成功时，状态变为resolved，出发resolves（）
+        // 失败时，状态变为rejected，出发rejected（）
+
+    })
+    pro.then(
+        value=>{//成功的时候返回结果value，onResolved
+            console.log(value);
+            
+        },
+        resean=>{//成功的时候返回结果value，onResolved
+            console.log(resean);
+
+        }
+    )
+    </script>
+</body>
+</html>

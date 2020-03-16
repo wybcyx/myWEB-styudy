@@ -14,3 +14,7 @@ cd d:/GitTest   //指定存放的目录
 git clone https://git.oschina.net/name/test.git   
 //https://git.oschina.net/name/test.git你的远程仓库地址 
 // 将远程仓库的代码拉取下来
+
+
+git的学习内容
+git是版本管理工具；
